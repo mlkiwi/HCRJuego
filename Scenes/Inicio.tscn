@@ -1,0 +1,111 @@
+[gd_scene load_steps=8 format=3 uid="uid://d6pk1sjl7f6i"]
+
+[ext_resource type="FontFile" uid="uid://bug6qli1adqyb" path="res://fredoka-one.one-regular.ttf" id="1_25415"]
+[ext_resource type="Texture2D" uid="uid://irsnc3kua8hw" path="res://Images/Meow Knight/Meow-Knight_Idle head.png" id="2_fu0tj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y7rjj"]
+bg_color = Color(0.168627, 0.176471, 0.258824, 1)
+
+[sub_resource type="GDScript" id="GDScript_lum3g"]
+script/source = "extends PanelContainer
+
+
+
+func _on_button_pressed():
+	get_tree().change_scene_to_file(\"res://Images/Levels/nivel_1.tscn\")
+
+func _on_button_2_pressed():
+	get_tree().quit()
+"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yvt10"]
+content_margin_left = 1.0
+content_margin_top = 1.0
+content_margin_right = 1.0
+content_margin_bottom = 1.0
+bg_color = Color(0.552941, 0.803922, 0.682353, 1)
+border_width_top = 5
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+expand_margin_top = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q5h48"]
+bg_color = Color(0.552941, 0.6, 0.682353, 1)
+expand_margin_top = 15.0
+expand_margin_bottom = 15.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4sjxg"]
+bg_color = Color(0.937255, 0.137255, 0.235294, 1)
+border_width_bottom = 5
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+expand_margin_top = 5.0
+expand_margin_bottom = 5.0
+
+[node name="PanelContainer" type="PanelContainer"]
+offset_right = 1920.0
+offset_bottom = 1080.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_y7rjj")
+script = SubResource("GDScript_lum3g")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 30
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_25415")
+theme_override_font_sizes/font_size = 246
+text = "MeDiLu"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_25415")
+theme_override_font_sizes/font_size = 101
+theme_override_styles/normal = SubResource("StyleBoxFlat_yvt10")
+text = "Empezar Partida"
+
+[node name="Button3" type="Button" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_25415")
+theme_override_font_sizes/font_size = 51
+theme_override_styles/normal = SubResource("StyleBoxFlat_q5h48")
+text = "Config."
+
+[node name="Button2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_25415")
+theme_override_font_sizes/font_size = 66
+theme_override_styles/normal = SubResource("StyleBoxFlat_4sjxg")
+text = "Salir"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(212, 311)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+texture_filter = 1
+position = Vector2(1204, 166)
+rotation = 0.261799
+scale = Vector2(11.7739, 12.8705)
+texture = ExtResource("2_fu0tj")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(212, 311)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2"]
+texture_filter = 1
+position = Vector2(292, -34)
+rotation = 0.261799
+scale = Vector2(11.7739, 12.8705)
+texture = ExtResource("2_fu0tj")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(970, 548)
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_button_2_pressed"]

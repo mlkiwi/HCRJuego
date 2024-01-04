@@ -2,11 +2,12 @@ extends RigidBody2D
 
 var wheels = []
 var speed = 60000
-var max_speed = 20
+var max_speed = 30
 var dead =  false
 
 var fuel = 100
 
+	
 func _ready():
 	wheels = get_tree().get_nodes_in_group("wheel")
 	get_parent().update_fuel_UI(fuel)
@@ -19,13 +20,13 @@ func _physics_process(delta):
 			use_fuel(delta)
 			for wheel in wheels:
 				if wheel.angular_velocity < max_speed:
-					wheel.apply_torque_impulse(speed*delta*60)
+					wheel.apply_torque_impulse(speed*delta*75)
 
 		if Input.is_action_pressed("ui_left"):
 			use_fuel(delta)
 			for wheel in wheels:
 				if wheel.angular_velocity > -max_speed:
-					wheel.apply_torque_impulse(-speed*delta*60)
+					wheel.apply_torque_impulse(-speed*delta*75)
 	else:
 		if $GameOverTimer.is_stopped():
 			$GameOverTimer.start()
@@ -47,3 +48,6 @@ func use_fuel(delta):
 
 func _on_game_over_timer_timeout():
 	get_tree().reload_current_scene()
+	
+	
+
