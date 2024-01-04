@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dko42by50x3k2"]
+
+[ext_resource type="Texture2D" uid="uid://blwgtoekava1r" path="res://Imagenes botones/b_7.png" id="1_65tta"]
+[ext_resource type="Texture2D" uid="uid://dvsatyyhqpcag" path="res://Imagenes botones/b_6.png" id="2_74c06"]
+
+[node name="Controles" type="CanvasLayer"]
+
+[node name="Derecha" type="TouchScreenButton" parent="."]
+position = Vector2(396, 517)
+scale = Vector2(0.635193, 0.481356)
+texture_normal = ExtResource("1_65tta")
+action = "ui_right"
+
+[node name="Izquierda" type="TouchScreenButton" parent="."]
+position = Vector2(161, 519)
+scale = Vector2(0.626609, 0.477966)
+texture_normal = ExtResource("2_74c06")
+action = "ui_left"

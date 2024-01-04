@@ -1,8 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://c04jddv0od2tr"]
+[gd_scene load_steps=7 format=3 uid="uid://c04jddv0od2tr"]
 
 [ext_resource type="Script" path="res://Code/Fuel.gd" id="1_tijro"]
 [ext_resource type="Texture2D" uid="uid://ci28grkwo75u3" path="res://Images/Pickups/Fuel.png" id="2_wuwky"]
-[ext_resource type="AudioStream" uid="uid://c2yv7l50kv30x" path="res://Audio/Fuel.wav" id="3_vwwoy"]
 
 [sub_resource type="Animation" id="Animation_ml3dp"]
 resource_name = "Pickup"
@@ -40,7 +39,7 @@ tracks/2/keys = {
 "clips": [{
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource("3_vwwoy")
+"stream": null
 }],
 "times": PackedFloat32Array(0)
 }

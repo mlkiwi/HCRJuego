@@ -104,5 +104,8 @@ rotation = 0.261799
 scale = Vector2(11.7739, 12.8705)
 texture = ExtResource("2_fu0tj")
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(970, 548)
+
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_button_2_pressed"]
